@@ -17,7 +17,8 @@ class LanguagePack::Base
   include LanguagePack::ShellHelpers
   extend LanguagePack::ShellHelpers
 
-  VENDOR_URL           = ENV['BUILDPACK_VENDOR_URL'] || "https://s3-external-1.amazonaws.com/heroku-buildpack-ruby"
+  # MDL
+  VENDOR_URL           = ENV['BUILDPACK_VENDOR_URL'] || "https://cache.ruby-lang.org/pub/ruby/1.9"
   DEFAULT_LEGACY_STACK = "cedar"
   ROOT_DIR             = File.expand_path("../../..", __FILE__)
 
