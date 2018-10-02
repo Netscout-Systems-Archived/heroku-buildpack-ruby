@@ -21,6 +21,7 @@ module LanguagePack
     end
 
     def fetch_untar(path, files_to_extract = nil)
+      puts "files_to_extract #{files_to_extract}"
       curl = curl_command("#{@host_url_no_stack.join(path)} -s -o")
       run! "#{curl} - | tar zxf - #{files_to_extract}",
         error_class: FetchError,
