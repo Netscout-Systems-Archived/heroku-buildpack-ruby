@@ -21,7 +21,7 @@ heroku_buildpack_ruby_install_ruby()
 {
   local bin_dir=$1
   local buildpack_dir=$2
-  heroku_buildpack_ruby_dir="$buildpack_dir/vendor/ruby/$STACK"
+  heroku_buildpack_ruby_dir="$buildpack_dir/vendor/ruby"
 
   echo "$heroku_buildpack_ruby_dir"
 

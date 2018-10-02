@@ -14,7 +14,6 @@ class LanguagePack::Installers::HerokuRubyInstaller
   def fetch_unpack(ruby_version, install_dir, build = false)
     puts ruby_version.version_for_download
     puts install_dir
-    puts build
 
     FileUtils.mkdir_p(install_dir)
     Dir.chdir(install_dir) do
