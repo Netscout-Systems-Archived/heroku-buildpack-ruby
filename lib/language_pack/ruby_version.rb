@@ -12,8 +12,7 @@ module LanguagePack
       end
     end
 
-    # MDL
-    DEFAULT_VERSION_NUMBER = "1.9.3p551"
+    DEFAULT_VERSION_NUMBER = "2.4.4"
     DEFAULT_VERSION        = "ruby-#{DEFAULT_VERSION_NUMBER}"
     LEGACY_VERSION_NUMBER  = "1.9.2"
     LEGACY_VERSION         = "ruby-#{LEGACY_VERSION_NUMBER}"
