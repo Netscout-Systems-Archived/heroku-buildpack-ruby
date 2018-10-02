@@ -23,6 +23,8 @@ heroku_buildpack_ruby_install_ruby()
   local buildpack_dir=$2
   heroku_buildpack_ruby_dir="$buildpack_dir/vendor/ruby/$STACK"
 
+  echo heroku_buildpack_ruby_dir
+
   # The -d flag checks to see if a file exists and is a directory.
   # This directory may be non-empty if a previous compile has
   # already placed a Ruby executable here. Also
