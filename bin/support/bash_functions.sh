@@ -21,9 +21,7 @@ heroku_buildpack_ruby_install_ruby()
 {
   local bin_dir=$1
   local buildpack_dir=$2
-  heroku_buildpack_ruby_dir="$buildpack_dir/vendor/ruby"
-
-  echo "$heroku_buildpack_ruby_dir"
+  heroku_buildpack_ruby_dir="$buildpack_dir/vendor/ruby/$STACK"
 
   # The -d flag checks to see if a file exists and is a directory.
   # This directory may be non-empty if a previous compile has
@@ -40,8 +38,6 @@ heroku_buildpack_ruby_install_ruby()
     }
     trap atexit EXIT
   fi
-
-  echo "$heroku_buildpack_ruby_dir"
 
   # Even if a Ruby is already downloaded for use by the
   # buildpack we still have to set up it's PATH and GEM_PATH

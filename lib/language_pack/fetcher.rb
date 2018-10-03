@@ -11,25 +11,23 @@ module LanguagePack
     def initialize(host_url, stack = nil)
       @config   = load_config
       @host_url = fetch_cdn(host_url)
-      @host_url_no_stack = @host_url
       @host_url += File.basename(stack) if stack
     end
 
     def fetch(path)
-      curl = curl_command("-O #{@host_url_no_stack.join(path)}")
+      curl = curl_command("-O #{@host_url.join(path)}")
       run!(curl, error_class: FetchError)
     end
 
     def fetch_untar(path, files_to_extract = nil)
-      puts "files_to_extract #{files_to_extract}"
-      curl = curl_command("#{@host_url_no_stack.join(path)} -s -o")
+      curl = curl_command("#{@host_url.join(path)} -s -o")
       run! "#{curl} - | tar zxf - #{files_to_extract}",
         error_class: FetchError,
         max_attempts: 3
     end
 
     def fetch_bunzip2(path, files_to_extract = nil)
-      curl = curl_command("#{@host_url_no_stack.join(path)} -s -o")
+      curl = curl_command("#{@host_url.join(path)} -s -o")
       run!("#{curl} - | tar jxf - #{files_to_extract}", error_class: FetchError)
     end
 
