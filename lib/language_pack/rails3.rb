@@ -153,9 +153,11 @@ WARNING
     end
   end
 
+  # MDL - Hacked so I could deploy the SNP
   def assets_compile_enabled?
-    return false unless @assets_compile_config.success?
-    @assets_compile_config.did_match?("true")
+    #return false unless @assets_compile_config.success?
+    #@assets_compile_config.did_match?("true")
+    return false
   end
 
   def install_plugins
